@@ -26,14 +26,15 @@ const projects = [
     link: "https://codelingo-alpha.vercel.app/",
   },
   {
-    name: "Physics Platform",
-    category: "Educational Technology",
+    name: "Gold's Gym Venice",
+    category: "Fitness & Gym Website",
     description:
-      "Modern physics education experience focused on visual learning and interactive scientific exploration.",
-    tech: ["React", "TypeScript", "TailwindCSS", "Vercel"],
+      "A premium fitness website for Gold's Gym Venice with modern design, class schedules, trainer profiles, and membership plans.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Vercel"],
     color: "#F59E0B",
-    initial: "P",
-    image: "",
+    initial: "G",
+    image: "/projects/gym.png",
+    link: "https://golds-gym-venice.vercel.app/",
   },
   {
     name: "Project Alpha",

@@ -18,11 +18,11 @@ const featuredProjects = [
     link: "https://codelingo-alpha.vercel.app/",
   },
   {
-    name: "Physics Platform",
-    category: "Educational Technology",
-    image: "/projects/physics.png",
+    name: "Gold's Gym Venice",
+    category: "Fitness & Gym Website",
+    image: "/projects/gym.png",
     color: "#F59E0B",
-    link: "",
+    link: "https://golds-gym-venice.vercel.app/",
   },
   {
     name: "Project Alpha",
