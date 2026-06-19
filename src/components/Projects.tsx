@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 const projects = [
   {
@@ -93,12 +92,10 @@ export default function Projects() {
               <div className="relative aspect-video bg-graphite-light flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
                 {project.image ? (
-                  <Image
+                  <img
                     src={project.image}
                     alt={project.name}
-                    fill
-                    className="object-cover project-image transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="absolute inset-0 w-full h-full object-cover project-image transition-transform duration-500"
                   />
                 ) : (
                   <div
