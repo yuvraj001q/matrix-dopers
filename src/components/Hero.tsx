@@ -39,11 +39,11 @@ const featuredProjects = [
     link: "https://kimberley-general-store.up.railway.app/",
   },
   {
-    name: "Project Gamma",
-    category: "AI Integration",
-    image: "/projects/gamma.png",
+    name: "Mayo Clinic Healthcare",
+    category: "Healthcare & Medical",
+    image: "/projects/clinic.png",
     color: "#EC4899",
-    link: "",
+    link: "https://mayo-clinic-healthcare.up.railway.app/",
   },
 ];
 

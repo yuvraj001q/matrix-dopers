@@ -59,14 +59,15 @@ const projects = [
     link: "https://kimberley-general-store.up.railway.app/",
   },
   {
-    name: "Project Gamma",
-    category: "AI Integration",
+    name: "Mayo Clinic Healthcare",
+    category: "Healthcare & Medical",
     description:
-      "An AI-powered solution that integrates intelligent automation and machine learning capabilities into existing workflows.",
+      "A modern healthcare platform with appointment booking, doctor profiles, services overview, and patient portal.",
     tech: ["Next.js", "TypeScript", "AI/ML", "TailwindCSS"],
     color: "#EC4899",
-    initial: "G",
-    image: "",
+    initial: "M",
+    image: "/projects/clinic.png",
+    link: "https://mayo-clinic-healthcare.up.railway.app/",
   },
 ];
 
