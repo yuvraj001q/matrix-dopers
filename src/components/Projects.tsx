@@ -37,14 +37,15 @@ const projects = [
     link: "https://golds-gym-venice.vercel.app/",
   },
   {
-    name: "Project Alpha",
-    category: "Custom Web Application",
+    name: "Onyx Coffee Lab",
+    category: "Cafe & Restaurant Website",
     description:
-      "A tailored web application built to solve specific business challenges with modern technologies and clean architecture.",
+      "A premium coffee shop website with elegant design, menu showcase, online ordering, and brand storytelling.",
     tech: ["Next.js", "TypeScript", "Neon", "Vercel"],
     color: "#10B981",
-    initial: "A",
-    image: "",
+    initial: "O",
+    image: "/projects/cafe.png",
+    link: "https://onyxcoffeelab.netlify.app/",
   },
   {
     name: "Project Beta",
