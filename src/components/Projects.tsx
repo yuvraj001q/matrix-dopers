@@ -22,6 +22,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "TailwindCSS", "Neon"],
     color: "#8B5CF6",
     initial: "O",
+    image: "",
   },
   {
     name: "Physics Platform",
@@ -31,6 +32,7 @@ const projects = [
     tech: ["React", "TypeScript", "TailwindCSS", "Vercel"],
     color: "#F59E0B",
     initial: "P",
+    image: "",
   },
   {
     name: "Project Alpha",
@@ -40,6 +42,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "Neon", "Vercel"],
     color: "#10B981",
     initial: "A",
+    image: "",
   },
   {
     name: "Project Beta",
@@ -49,6 +52,7 @@ const projects = [
     tech: ["Next.js", "React", "TypeScript", "PostgreSQL"],
     color: "#EF4444",
     initial: "B",
+    image: "",
   },
   {
     name: "Project Gamma",
@@ -58,6 +62,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "AI/ML", "TailwindCSS"],
     color: "#EC4899",
     initial: "G",
+    image: "",
   },
 ];
 
