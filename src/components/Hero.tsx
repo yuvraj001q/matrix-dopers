@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const featuredProjects = [
   {
@@ -8,50 +8,103 @@ const featuredProjects = [
     category: "AI-Powered Gamified Productivity",
     image: "/projects/levelup.png",
     color: "#00DBE9",
+    link: "https://level-up-theta-tawny.vercel.app/",
   },
   {
     name: "OpenCodeLingo",
     category: "Developer Learning Platform",
     image: "/projects/opencodelingo.png",
     color: "#8B5CF6",
+    link: "",
   },
   {
     name: "Physics Platform",
     category: "Educational Technology",
     image: "/projects/physics.png",
     color: "#F59E0B",
+    link: "",
   },
   {
     name: "Project Alpha",
     category: "Custom Web Application",
     image: "/projects/alpha.png",
     color: "#10B981",
+    link: "",
   },
   {
     name: "Project Beta",
     category: "SaaS Platform",
     image: "/projects/beta.png",
     color: "#EF4444",
+    link: "",
   },
   {
     name: "Project Gamma",
     category: "AI Integration",
     image: "/projects/gamma.png",
     color: "#EC4899",
+    link: "",
   },
 ];
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-  const nextProject = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % featuredProjects.length);
-  }, []);
+  const goTo = useCallback(
+    (index: number, dir: "next" | "prev") => {
+      setDirection(dir);
+      setActiveIndex(index);
+    },
+    []
+  );
+
+  const next = useCallback(() => {
+    goTo((activeIndex + 1) % featuredProjects.length, "next");
+  }, [activeIndex, goTo]);
+
+  const prev = useCallback(() => {
+    goTo(
+      (activeIndex - 1 + featuredProjects.length) % featuredProjects.length,
+      "prev"
+    );
+  }, [activeIndex, goTo]);
 
   useEffect(() => {
-    const interval = setInterval(nextProject, 4000);
+    if (isPaused) return;
+    const interval = setInterval(next, 4000);
     return () => clearInterval(interval);
-  }, [nextProject]);
+  }, [next, isPaused]);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [next, prev]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) next();
+      else prev();
+    }
+  };
+
+  const project = featuredProjects[activeIndex];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16">
@@ -108,7 +161,11 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative">
+          <div
+            className="relative group/carousel"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div className="relative rounded-2xl overflow-hidden border border-white/5 bg-graphite">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
                 <div className="flex gap-1.5">
@@ -118,75 +175,153 @@ export default function Hero() {
                 </div>
                 <div className="flex-1 text-center">
                   <span className="text-xs text-muted font-mono">
-                    {featuredProjects[activeIndex].name}
+                    {project.name}
                   </span>
                 </div>
               </div>
 
-              <div className="relative aspect-video bg-graphite-light overflow-hidden">
-                {featuredProjects[activeIndex].image ? (
+              <div
+                className="relative aspect-video bg-graphite-light overflow-hidden cursor-pointer"
+                onClick={() => {
+                  if (project.link) window.open(project.link, "_blank");
+                }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                {project.image ? (
                   <img
-                    src={featuredProjects[activeIndex].image}
-                    alt={featuredProjects[activeIndex].name}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    src={project.image}
+                    alt={project.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
+                    key={activeIndex}
+                    style={{
+                      animation: `fade-in 0.4s ease-out`,
+                    }}
                   />
                 ) : (
-                  <>
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-transparent opacity-50" />
-                    <div className="relative text-center space-y-4 p-8">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-4 p-8">
                       <div
                         className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-3xl font-bold"
                         style={{
-                          backgroundColor: `${featuredProjects[activeIndex].color}15`,
-                          color: featuredProjects[activeIndex].color,
+                          backgroundColor: `${project.color}15`,
+                          color: project.color,
                         }}
                       >
-                        {featuredProjects[activeIndex].name[0]}
+                        {project.name[0]}
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold">
-                          {featuredProjects[activeIndex].name}
-                        </h3>
+                        <h3 className="text-xl font-semibold">{project.name}</h3>
                         <p className="text-sm text-muted mt-1">
-                          {featuredProjects[activeIndex].category}
+                          {project.category}
                         </p>
                       </div>
-                      <div className="flex gap-2 justify-center">
-                        <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
-                          Next.js
-                        </span>
-                        <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
-                          TypeScript
-                        </span>
-                        <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
-                          Tailwind
-                        </span>
-                      </div>
                     </div>
-                  </>
+                  </div>
+                )}
+
+                {project.link && (
+                  <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="px-5 py-2.5 rounded-full bg-white text-black text-sm font-medium flex items-center gap-2">
+                      View Project
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 )}
               </div>
 
               <div className="px-4 py-3 border-t border-white/5 flex items-center justify-between">
                 <div className="flex gap-2">
-                  {featuredProjects.map((_, i) => (
+                  {featuredProjects.map((p, i) => (
                     <button
                       key={i}
-                      onClick={() => setActiveIndex(i)}
+                      onClick={() =>
+                        goTo(i, i > activeIndex ? "next" : "prev")
+                      }
                       className={`h-1.5 rounded-full transition-all duration-300 ${
                         i === activeIndex
                           ? "w-6 bg-cyan"
                           : "w-1.5 bg-white/15 hover:bg-white/25"
                       }`}
-                      aria-label={`View project ${i + 1}`}
+                      aria-label={`View ${p.name}`}
                     />
                   ))}
                 </div>
-                <span className="text-xs text-muted font-mono">
-                  {String(activeIndex + 1).padStart(2, "0")} /{" "}
-                  {String(featuredProjects.length).padStart(2, "0")}
-                </span>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={prev}
+                    className="w-7 h-7 rounded-lg border border-white/10 flex items-center justify-center text-muted hover:text-white hover:border-cyan/30 transition-all"
+                    aria-label="Previous project"
+                  >
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  <span className="text-xs text-muted font-mono min-w-[3rem] text-center">
+                    {String(activeIndex + 1).padStart(2, "0")} /{" "}
+                    String(featuredProjects.length).padStart(2, "0")}
+                  </span>
+                  <button
+                    onClick={next}
+                    className="w-7 h-7 rounded-lg border border-white/10 flex items-center justify-center text-muted hover:text-white hover:border-cyan/30 transition-all"
+                    aria-label="Next project"
+                  >
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
+            </div>
+
+            <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity">
+              {featuredProjects.map((p, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i, i > activeIndex ? "next" : "prev")}
+                  className={`text-xs px-2 py-1 rounded transition-colors ${
+                    i === activeIndex
+                      ? "text-cyan bg-cyan/10"
+                      : "text-muted hover:text-white"
+                  }`}
+                >
+                  {p.name}
+                </button>
+              ))}
             </div>
           </div>
         </div>
