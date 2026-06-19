@@ -283,7 +283,7 @@ export default function Hero() {
                   </button>
                   <span className="text-xs text-muted font-mono min-w-[3rem] text-center">
                     {String(activeIndex + 1).padStart(2, "0")} /{" "}
-                    String(featuredProjects.length).padStart(2, "0")}
+                    {String(featuredProjects.length).padStart(2, "0")}
                   </span>
                   <button
                     onClick={next}
