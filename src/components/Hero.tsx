@@ -123,38 +123,48 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="relative aspect-video bg-graphite-light flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-transparent opacity-50" />
-                <div className="relative text-center space-y-4 p-8">
-                  <div
-                    className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-3xl font-bold"
-                    style={{
-                      backgroundColor: `${featuredProjects[activeIndex].color}15`,
-                      color: featuredProjects[activeIndex].color,
-                    }}
-                  >
-                    {featuredProjects[activeIndex].name[0]}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold">
-                      {featuredProjects[activeIndex].name}
-                    </h3>
-                    <p className="text-sm text-muted mt-1">
-                      {featuredProjects[activeIndex].category}
-                    </p>
-                  </div>
-                  <div className="flex gap-2 justify-center">
-                    <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
-                      Next.js
-                    </span>
-                    <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
-                      TypeScript
-                    </span>
-                    <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
-                      Tailwind
-                    </span>
-                  </div>
-                </div>
+              <div className="relative aspect-video bg-graphite-light overflow-hidden">
+                {featuredProjects[activeIndex].image ? (
+                  <img
+                    src={featuredProjects[activeIndex].image}
+                    alt={featuredProjects[activeIndex].name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-transparent opacity-50" />
+                    <div className="relative text-center space-y-4 p-8">
+                      <div
+                        className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-3xl font-bold"
+                        style={{
+                          backgroundColor: `${featuredProjects[activeIndex].color}15`,
+                          color: featuredProjects[activeIndex].color,
+                        }}
+                      >
+                        {featuredProjects[activeIndex].name[0]}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold">
+                          {featuredProjects[activeIndex].name}
+                        </h3>
+                        <p className="text-sm text-muted mt-1">
+                          {featuredProjects[activeIndex].category}
+                        </p>
+                      </div>
+                      <div className="flex gap-2 justify-center">
+                        <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
+                          Next.js
+                        </span>
+                        <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
+                          TypeScript
+                        </span>
+                        <span className="px-2 py-1 text-xs rounded bg-white/5 text-muted border border-white/5">
+                          Tailwind
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
               <div className="px-4 py-3 border-t border-white/5 flex items-center justify-between">
