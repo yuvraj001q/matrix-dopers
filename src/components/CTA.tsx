@@ -21,7 +21,7 @@ export default function CTA() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a
-                href="https://wa.me/919999999999?text=Hi%20Matrix%20Dopers%2C%20I%27d%20like%20to%20discuss%20a%20project"
+                href="https://wa.me/917088932008?text=Hi%20Matrix%20Dopers%2C%20I%27d%20like%20to%20discuss%20a%20project"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white text-black font-medium px-8 py-4 rounded-full hover:bg-cyan transition-all duration-200 group"
@@ -42,7 +42,7 @@ export default function CTA() {
                 </svg>
               </a>
               <a
-                href="mailto:hello@matrixdopers.com"
+                href="mailto:yuvrajsinghnegi001@gmail.com"
                 className="inline-flex items-center justify-center gap-2 border border-white/10 text-white font-medium px-8 py-4 rounded-full hover:border-cyan/30 hover:bg-cyan/5 transition-all duration-200"
               >
                 Contact Us
