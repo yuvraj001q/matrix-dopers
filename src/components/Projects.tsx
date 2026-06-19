@@ -48,14 +48,15 @@ const projects = [
     link: "https://onyxcoffeelab.netlify.app/",
   },
   {
-    name: "Project Beta",
-    category: "SaaS Platform",
+    name: "Kimberley General Store",
+    category: "E-Commerce & Retail",
     description:
-      "A scalable SaaS platform with subscription management, user dashboards, and real-time data synchronization.",
+      "A modern general store website with product catalog, online ordering, and local delivery integration.",
     tech: ["Next.js", "React", "TypeScript", "PostgreSQL"],
     color: "#EF4444",
-    initial: "B",
-    image: "",
+    initial: "K",
+    image: "/projects/store.png",
+    link: "https://kimberley-general-store.up.railway.app/",
   },
   {
     name: "Project Gamma",

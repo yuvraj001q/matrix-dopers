@@ -32,11 +32,11 @@ const featuredProjects = [
     link: "https://onyxcoffeelab.netlify.app/",
   },
   {
-    name: "Project Beta",
-    category: "SaaS Platform",
-    image: "/projects/beta.png",
+    name: "Kimberley General Store",
+    category: "E-Commerce & Retail",
+    image: "/projects/store.png",
     color: "#EF4444",
-    link: "",
+    link: "https://kimberley-general-store.up.railway.app/",
   },
   {
     name: "Project Gamma",
