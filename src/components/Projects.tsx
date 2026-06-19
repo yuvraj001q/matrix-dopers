@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -86,27 +87,37 @@ export default function Projects() {
             >
               <div className="relative aspect-video bg-graphite-light flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
-                <div
-                  className="project-image transition-transform duration-500 flex items-center justify-center"
-                  style={{
-                    background: `linear-gradient(135deg, ${project.color}08, ${project.color}15)`,
-                  }}
-                >
-                  <div className="text-center space-y-3">
-                    <div
-                      className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-2xl font-bold transition-transform duration-300 group-hover:scale-110"
-                      style={{
-                        backgroundColor: `${project.color}20`,
-                        color: project.color,
-                      }}
-                    >
-                      {project.initial}
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover project-image transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div
+                    className="project-image transition-transform duration-500 flex items-center justify-center"
+                    style={{
+                      background: `linear-gradient(135deg, ${project.color}08, ${project.color}15)`,
+                    }}
+                  >
+                    <div className="text-center space-y-3">
+                      <div
+                        className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-2xl font-bold transition-transform duration-300 group-hover:scale-110"
+                        style={{
+                          backgroundColor: `${project.color}20`,
+                          color: project.color,
+                        }}
+                      >
+                        {project.initial}
+                      </div>
+                      <span className="text-xs text-muted font-mono block">
+                        {project.category}
+                      </span>
                     </div>
-                    <span className="text-xs text-muted font-mono block">
-                      {project.category}
-                    </span>
                   </div>
-                </div>
+                )}
 
                 <div className="project-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center gap-3">
                   {project.link ? (
