@@ -11,6 +11,7 @@ const projects = [
     tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "AI"],
     color: "#00DBE9",
     initial: "L",
+    image: "/projects/levelup.png",
     link: "https://level-up-theta-tawny.vercel.app/",
   },
   {
