@@ -22,7 +22,8 @@ const projects = [
     tech: ["Next.js", "TypeScript", "TailwindCSS", "Neon"],
     color: "#8B5CF6",
     initial: "O",
-    image: "",
+    image: "/projects/opencodelingo.png",
+    link: "https://codelingo-alpha.vercel.app/",
   },
   {
     name: "Physics Platform",

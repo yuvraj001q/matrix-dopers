@@ -15,7 +15,7 @@ const featuredProjects = [
     category: "Developer Learning Platform",
     image: "/projects/opencodelingo.png",
     color: "#8B5CF6",
-    link: "",
+    link: "https://codelingo-alpha.vercel.app/",
   },
   {
     name: "Physics Platform",
