@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 const featuredProjects = [
   {
     name: "Level Up",
-    category: "Productivity Platform",
+    category: "AI-Powered Gamified Productivity",
     image: "/projects/levelup.png",
     color: "#00DBE9",
   },

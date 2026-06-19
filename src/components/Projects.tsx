@@ -5,12 +5,13 @@ import { useState } from "react";
 const projects = [
   {
     name: "Level Up",
-    category: "Productivity Platform",
+    category: "AI-Powered Gamified Productivity",
     description:
-      "A gamified self-improvement platform that transforms productivity into an engaging progression system with levels, achievements, analytics, and AI-powered guidance.",
-    tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "PostgreSQL"],
+      "AI-generated quests that help students build discipline, consistency, and real-world progress. Features XP rewards, achievements, and streaks.",
+    tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "AI"],
     color: "#00DBE9",
     initial: "L",
+    link: "https://level-up-theta-tawny.vercel.app/",
   },
   {
     name: "OpenCodeLingo",
@@ -108,14 +109,22 @@ export default function Projects() {
                 </div>
 
                 <div className="project-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center gap-3">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-cyan transition-colors"
+                    >
+                      View Project
+                    </a>
+                  ) : (
+                    <span className="px-4 py-2 rounded-full bg-white/20 text-white/50 text-sm font-medium cursor-not-allowed">
+                      Coming Soon
+                    </span>
+                  )}
                   <a
-                    href="#"
-                    className="px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-cyan transition-colors"
-                  >
-                    View Project
-                  </a>
-                  <a
-                    href="#"
+                    href="#contact"
                     className="px-4 py-2 rounded-full border border-white/20 text-white text-sm font-medium hover:border-cyan/50 hover:bg-cyan/10 transition-all"
                   >
                     View Details
