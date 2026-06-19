@@ -308,7 +308,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity">
+            <div className="absolute top-full left-0 right-0 flex justify-center gap-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity mt-4">
               {featuredProjects.map((p, i) => (
                 <button
                   key={i}
