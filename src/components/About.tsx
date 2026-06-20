@@ -25,17 +25,32 @@ export default function About() {
               to create digital experiences that actually work. No fluff, no
               templates — just clean, fast, and effective products.
             </p>
+            <p className="text-lg text-muted leading-relaxed">
+              From business websites to SaaS platforms and AI-powered tools,
+              we handle everything from concept to deployment. Our clients get
+              direct access to the founders — no account managers, no
+              miscommunication, just real work delivered fast.
+            </p>
 
-            <div className="grid grid-cols-3 gap-4 pt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
               {[
                 { value: "Fast", label: "Delivery" },
                 { value: "Modern", label: "Design" },
                 { value: "Direct", label: "Communication" },
+                { value: "24/7", label: "Support" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center p-4 rounded-xl border border-white/5 bg-graphite">
                   <div className="text-xl font-bold text-cyan">{stat.value}</div>
                   <div className="text-xs text-muted mt-1">{stat.label}</div>
                 </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              {["Next.js", "React", "TypeScript", "TailwindCSS", "PostgreSQL", "Vercel", "AI"].map((skill) => (
+                <span key={skill} className="px-3 py-1.5 text-xs rounded-lg bg-cyan/5 border border-cyan/10 text-cyan">
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
@@ -46,7 +61,7 @@ export default function About() {
                 <img
                   src="/yuvraj.png"
                   alt="Yuvraj Singh Negi"
-                  className="w-20 h-20 rounded-2xl object-cover border border-cyan/20"
+                  className="w-24 h-24 rounded-2xl object-cover border border-cyan/20"
                 />
                 <div>
                   <h3 className="text-lg font-semibold">Yuvraj Singh Negi</h3>
@@ -64,7 +79,7 @@ export default function About() {
                 <img
                   src="/aayush.png"
                   alt="Aayush Bisht"
-                  className="w-20 h-20 rounded-2xl object-cover border border-cyan/20"
+                  className="w-24 h-24 rounded-2xl object-cover border border-cyan/20"
                 />
                 <div>
                   <h3 className="text-lg font-semibold">Aayush Bisht</h3>
