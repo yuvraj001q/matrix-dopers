@@ -43,9 +43,11 @@ export default function About() {
           <div className="space-y-6">
             <div className="rounded-2xl border border-white/5 bg-graphite p-8 space-y-4">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-cyan/10 border border-cyan/20 flex items-center justify-center">
-                  <span className="text-cyan font-mono text-lg font-bold">YS</span>
-                </div>
+                <img
+                  src="/yuvraj.png"
+                  alt="Yuvraj Singh Negi"
+                  className="w-14 h-14 rounded-2xl object-cover border border-cyan/20"
+                />
                 <div>
                   <h3 className="text-lg font-semibold">Yuvraj Singh Negi</h3>
                   <p className="text-sm text-cyan">Co-Founder</p>
@@ -59,9 +61,11 @@ export default function About() {
 
             <div className="rounded-2xl border border-white/5 bg-graphite p-8 space-y-4">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-cyan/10 border border-cyan/20 flex items-center justify-center">
-                  <span className="text-cyan font-mono text-lg font-bold">AB</span>
-                </div>
+                <img
+                  src="/aayush.png"
+                  alt="Aayush Bisht"
+                  className="w-14 h-14 rounded-2xl object-cover border border-cyan/20"
+                />
                 <div>
                   <h3 className="text-lg font-semibold">Aayush Bisht</h3>
                   <p className="text-sm text-cyan">Co-Founder</p>
