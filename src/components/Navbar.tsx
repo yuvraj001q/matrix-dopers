@@ -32,9 +32,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center group-hover:bg-cyan/20 transition-colors">
-              <span className="text-cyan font-mono text-sm font-bold">M</span>
-            </div>
+            <img src="/logo.png" alt="Matrix Dopers" className="w-8 h-8 rounded-lg object-cover" />
             <span className="font-semibold text-sm tracking-wide">
               Matrix Dopers
             </span>
@@ -119,9 +117,7 @@ export default function Navbar() {
       >
         <div className="nav-blur rounded-2xl border border-white/10 px-3 py-2 flex items-center gap-1 shadow-lg shadow-black/20">
           <a href="#home" className="flex items-center gap-2 group px-2">
-            <div className="w-7 h-7 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center group-hover:bg-cyan/20 transition-colors">
-              <span className="text-cyan font-mono text-xs font-bold">M</span>
-            </div>
+            <img src="/logo.png" alt="Matrix Dopers" className="w-7 h-7 rounded-lg object-cover" />
             <span className="font-semibold text-xs tracking-wide whitespace-nowrap">
               Matrix Dopers
             </span>

@@ -43,9 +43,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 items-start">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center">
-                <span className="text-cyan font-mono text-sm font-bold">M</span>
-              </div>
+              <img src="/logo.png" alt="Matrix Dopers" className="w-8 h-8 rounded-lg object-cover" />
               <span className="font-semibold text-sm tracking-wide">
                 Matrix Dopers
               </span>
