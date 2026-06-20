@@ -46,7 +46,7 @@ export default function About() {
                 <img
                   src="/yuvraj.png"
                   alt="Yuvraj Singh Negi"
-                  className="w-14 h-14 rounded-2xl object-cover border border-cyan/20"
+                  className="w-20 h-20 rounded-2xl object-cover border border-cyan/20"
                 />
                 <div>
                   <h3 className="text-lg font-semibold">Yuvraj Singh Negi</h3>
@@ -64,7 +64,7 @@ export default function About() {
                 <img
                   src="/aayush.png"
                   alt="Aayush Bisht"
-                  className="w-14 h-14 rounded-2xl object-cover border border-cyan/20"
+                  className="w-20 h-20 rounded-2xl object-cover border border-cyan/20"
                 />
                 <div>
                   <h3 className="text-lg font-semibold">Aayush Bisht</h3>
