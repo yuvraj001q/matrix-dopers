@@ -11,7 +11,7 @@ const projects = [
     tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "AI"],
     color: "#00DBE9",
     initial: "C",
-    image: "/projects/levelup.png",
+    image: "/projects/thecafeco.png",
     link: "https://cafecobakenbeans.netlify.app/",
   },
   {

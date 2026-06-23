@@ -6,7 +6,7 @@ const featuredProjects = [
   {
     name: "Cafe Cobaken Beans",
     category: "Bakery & Cafe Website",
-    image: "/projects/levelup.png",
+    image: "/projects/thecafeco.png",
     color: "#00DBE9",
     link: "https://cafecobakenbeans.netlify.app/",
   },
