@@ -4,15 +4,15 @@ import { useState } from "react";
 
 const projects = [
   {
-    name: "Level Up",
-    category: "AI-Powered Gamified Productivity",
+    name: "Cafe Cobaken Beans",
+    category: "Bakery & Cafe Website",
     description:
-      "AI-generated quests that help students build discipline, consistency, and real-world progress. Features XP rewards, achievements, and streaks.",
+      "A warm and inviting bakery cafe website with menu showcase, online ordering, and brand storytelling.",
     tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "AI"],
     color: "#00DBE9",
-    initial: "L",
+    initial: "C",
     image: "/projects/levelup.png",
-    link: "https://level-up-theta-tawny.vercel.app/",
+    link: "https://cafecobakenbeans.netlify.app/",
   },
   {
     name: "OpenCodeLingo",

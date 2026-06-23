@@ -4,11 +4,11 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 const featuredProjects = [
   {
-    name: "Level Up",
-    category: "AI-Powered Gamified Productivity",
+    name: "Cafe Cobaken Beans",
+    category: "Bakery & Cafe Website",
     image: "/projects/levelup.png",
     color: "#00DBE9",
-    link: "https://level-up-theta-tawny.vercel.app/",
+    link: "https://cafecobakenbeans.netlify.app/",
   },
   {
     name: "OpenCodeLingo",
